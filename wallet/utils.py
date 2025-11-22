@@ -22,11 +22,12 @@ def generate_keypair_from_seed(seed_phrase):
     mnemo = mnemonic.Mnemonic("english")
     if not mnemo.check(seed_phrase):
         raise ValueError("Invalid seed phrase")
-    
+
     seed = mnemo.to_seed(seed_phrase)
-    # Use first 32 bytes for keypair
+    # Use first 32 bytes for keypair seed
     seed_bytes = seed[:32]
-    keypair = Keypair.from_bytes(seed_bytes)
+    # Use from_seed() instead of from_bytes() - from_seed takes 32 bytes
+    keypair = Keypair.from_seed(seed_bytes)
     return keypair
 
 
