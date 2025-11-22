@@ -1,0 +1,11 @@
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+solana==0.30.2
+solders==0.18.1
+base58==2.1.1
+mnemonic==0.20
+requests==2.31.0
+python-dotenv==1.0.0
+cryptography==41.0.7
+
